@@ -1,10 +1,9 @@
 # coding: utf-8
 
+from core import views
 from django.conf import settings
 from django.conf.urls import url
 from ratelimit.decorators import ratelimit
-
-from core import views
 
 
 def rate_limit(view):

@@ -34,7 +34,7 @@ if os.getenv("SENTRY_SDK_KEY"):
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "e7g)k8)n!1##hutbt-^j*^7ro&*6kmz#c_#6el!94cd@xawdz5"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.getenv("DEBUG") or "").lower() in ("1", "true")
@@ -56,10 +56,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "rest_framework",
     "rest_framework.authtoken",
-
     "core",
 ]
 
