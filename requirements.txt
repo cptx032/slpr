@@ -1,0 +1,11 @@
+black
+Django==3.1.2
+django-extensions==3.0.9
+djangorestframework==3.12.1
+gunicorn==20.0.4
+ipdb==0.13.4
+ipython==7.16.1
+isort==5.6.3
+pyflakes==2.2.0
+sentry-sdk==0.18.0
+django-ratelimit==3.0.1

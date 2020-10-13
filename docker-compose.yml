@@ -1,0 +1,17 @@
+version: '2'
+services:
+  webserver:
+    # indicating where Dockerfile is
+    build: .
+    command: bash -c "LC_ALL=en_US.UTF-8 DEBUG=${DEBUG} python /code/manage.py migrate && gunicorn slpr.wsgi:application --chdir /code/ -w 2 -b 0.0.0.0:8028 --timeout=600 --log-level=error"
+    volumes:
+      - ./slpr:/code/
+    ports:
+      - "8028:8028"
+    environment:
+      - DEBUG
+      - SENTRY_SDK_KEY
+      - HOST_SERVER
+
+volumes:
+  web-static:
