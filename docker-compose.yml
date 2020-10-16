@@ -12,6 +12,7 @@ services:
       - DEBUG
       - SENTRY_SDK_KEY
       - HOST_SERVER
+      - SECRET_KEY
 
 volumes:
   web-static:
